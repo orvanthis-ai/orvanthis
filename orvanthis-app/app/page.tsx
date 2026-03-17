@@ -885,9 +885,9 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#0a0b0f] text-white">
       <div className="mx-auto max-w-[1600px] px-4 py-6">
-        <div className="grid grid-cols-1 gap-6 xl:grid-cols-[260px_1fr_280px]">
-          <aside className="hidden xl:flex flex-col gap-4">
-            <div className="rounded-2xl border border-white/8 bg-[#111318] p-4 shadow-[0_10px_30px_rgba(0,0,0,0.22)]">
+        <div className="grid grid-cols-1 gap-7 xl:grid-cols-[280px_1fr_320px]">
+          <aside className="hidden xl:flex flex-col gap-5">
+            <div className="rounded-2xl border border-white/8 bg-[#111318] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.22)]">
               <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-500">
                 Control Panel
               </p>
@@ -913,7 +913,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-white/8 bg-[#111318] p-4 shadow-[0_10px_30px_rgba(0,0,0,0.22)]">
+            <div className="rounded-2xl border border-white/8 bg-[#111318] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.22)]">
               <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-500">
                 Market Bias
               </p>
@@ -949,7 +949,7 @@ export default function Home() {
               Quick AI Scan
             </button>
 
-            <div className="rounded-2xl border border-white/8 bg-[#111318] p-4 shadow-[0_10px_30px_rgba(0,0,0,0.22)]">
+            <div className="rounded-2xl border border-white/8 bg-[#111318] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.22)]">
               <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-500">
                 Session Notes
               </p>
@@ -1205,7 +1205,7 @@ export default function Home() {
               )}
 
               {marketData.length > 0 && (
-                <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+                <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5">
                   {marketData.map((signal) => {
                     const styles = getConvictionStyles(signal.conviction);
                     const prediction = getPrediction(signal.changePercent);
@@ -1214,7 +1214,7 @@ export default function Home() {
                     return (
                       <div
                         key={signal.id}
-                        className={`rounded-[24px] border p-5 ${styles.card}`}
+                        className={`flex h-full flex-col justify-between rounded-[24px] border p-5 ${styles.card}`}
                       >
                         <div className="mb-3 flex flex-col items-start gap-2">
                           <span className={`text-[10px] uppercase tracking-[0.14em] ${styles.label}`}>
@@ -1310,13 +1310,13 @@ export default function Home() {
               )}
 
               {!feedLoading && !feedError && (
-                <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+                <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                   {opportunityFeed.map((item) => (
                     <button
                       key={item.id}
                       type="button"
                       onClick={() => handleFeedClick(item.query)}
-                      className="group flex flex-col justify-between rounded-[24px] border border-white/8 bg-[#0c0e12] p-5 text-left transition hover:border-sky-500/30 hover:bg-[#101317]"
+                      className="group flex h-full min-h-[260px] flex-col justify-between rounded-[24px] border border-white/8 bg-[#0c0e12] p-5 text-left transition hover:border-sky-500/30 hover:bg-[#101317]"
                     >
                       <div className="mb-3 flex flex-wrap gap-2">
                         <span className="inline-flex max-w-full rounded-full border border-violet-500/15 bg-violet-500/[0.06] px-2.5 py-1 text-[10px] uppercase tracking-[0.12em] text-violet-200/80">
@@ -1564,8 +1564,8 @@ export default function Home() {
             </section>
           </div>
 
-          <aside className="hidden xl:flex flex-col gap-4">
-            <div className="rounded-2xl border border-white/8 bg-[#111318] p-4 shadow-[0_10px_30px_rgba(0,0,0,0.22)]">
+          <aside className="hidden xl:flex flex-col gap-5">
+            <div className="rounded-2xl border border-white/8 bg-[#111318] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.22)]">
               <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-500">
                 Live Signal
               </p>
@@ -1591,7 +1591,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-white/8 bg-[#111318] p-4 shadow-[0_10px_30px_rgba(0,0,0,0.22)]">
+            <div className="rounded-2xl border border-white/8 bg-[#111318] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.22)]">
               <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-500">
                 Top Signal
               </p>
@@ -1617,7 +1617,7 @@ export default function Home() {
               )}
             </div>
 
-            <div className="rounded-2xl border border-white/8 bg-[#111318] p-4 shadow-[0_10px_30px_rgba(0,0,0,0.22)]">
+            <div className="rounded-2xl border border-white/8 bg-[#111318] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.22)]">
               <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-500">
                 Watchlist Alerts
               </p>

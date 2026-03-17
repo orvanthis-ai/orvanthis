@@ -1,65 +1,22 @@
 # Orvanthis Development Sprint
 
-Goal: Build the core MVP of the Orvanthis AI Strategic Intelligence Platform.
+Goal: Build the core MVP of the Orvanthis AI Opportunity Engine.
 
 The MVP must allow users to:
-- generate AI strategic reports
+- generate AI opportunity reports
 - view opportunity scores
 - store saved reports
 - reuse previous searches
 - explore emerging opportunity areas
-- monitor live market signals
-- track personalized watchlists
-- receive intelligence-driven alerts
 
 ---
 
 # CURRENT SPRINT
 
 ## Task 1
-Title: Watchlist Alerts
-Owner: Engineer Agent + Intelligence Agent
-Status: In Progress
-
-Goal:
-Create personalized alerts based on the user’s watchlists and current market/opportunity context.
-
-Requirements:
-- alerts panel reflects watchlist topics
-- alerts feel premium and useful
-- alerts are not generic filler
-- alerts fit the executive dashboard UI
-- alerts update based on watchlist-related context
-
-Definition of Done:
-Users see useful alert cards that connect directly to their watchlists.
-
----
-
-## Task 2
-Title: Market Reliability Upgrade
-Owner: Engineer Agent
-Status: In Progress
-
-Goal:
-Improve market signal consistency and reduce weak or empty readings.
-
-Requirements:
-- preserve last known good market state
-- reduce unstable pulse switching
-- improve fallback handling for partial data
-- keep market cards readable and premium
-- prevent broken-looking states when data is delayed
-
-Definition of Done:
-Market cards remain stable and useful even when live API data is incomplete.
-
----
-
-## Task 3
 Title: Recent Searches
 Owner: Engineer Agent
-Status: Active
+Status: Completed
 
 Goal:
 Track user search queries and display them in the sidebar.
@@ -76,7 +33,7 @@ Recent searches appear in the sidebar and are clickable.
 
 ---
 
-## Task 4
+## Task 2
 Title: Saved Reports Improvements
 Owner: Engineer Agent + Design Agent
 Status: Pending
@@ -89,98 +46,93 @@ Requirements:
 - show short preview snippet
 - improve timestamp formatting
 - improve sidebar layout
-- keep premium intelligence-feed styling
 
 Definition of Done:
 Saved reports feel like a clean intelligence feed.
 
 ---
 
-## Task 5
-Title: Opportunity Feed Refinement
+## Task 3
+Title: Opportunity Feed
 Owner: Product Agent + Engineer Agent
-Status: Active
+Status: In Progress
 
 Goal:
-Improve the AI-generated opportunity feed so it feels more useful and personalized.
+Generate suggested opportunities automatically.
 
 Requirements:
-- show suggested opportunities automatically
-- tie feed quality to watchlists where possible
-- keep cards premium and easy to scan
-- clicking a feed item should open a strong report
-- improve usefulness for business users
+- show 3–5 trending opportunities
+- auto-generated when dashboard loads
+- displayed as cards
+- clickable → generates report
 
 Definition of Done:
-Users see useful suggested opportunities without needing to search first.
+Users see suggested opportunities without searching.
+
+---
+
+## Task 4
+Title: Dashboard Polish Pass
+Owner: Engineer Agent + Design Agent
+Status: In Progress
+
+Goal:
+Upgrade the dashboard to premium, executive-level UI quality.
+
+Requirements:
+- fix cramped sidebar spacing
+- improve market card alignment and spacing
+- improve opportunity feed card consistency
+- unify padding, font hierarchy, and spacing
+- maintain current functionality
+
+Definition of Done:
+Dashboard feels clean, premium, and visually consistent.
+
+---
+
+## Task 5
+Title: Watchlist Alerts System
+Owner: Engineer Agent
+Status: Completed
+
+Goal:
+Generate intelligent alerts based on watchlists + market + opportunity feed.
+
+Requirements:
+- generate alerts dynamically
+- categorize alerts (positive, caution, monitor)
+- clickable → runs report
+- clean UI card display
+
+Definition of Done:
+Alerts update dynamically and feel useful and actionable.
 
 ---
 
 ## Task 6
-Title: Strategic Decision Mode
-Owner: Product Agent + Engineer Agent
-Status: Pending
+Title: Market Data Reliability
+Owner: Engineer Agent
+Status: In Progress
 
 Goal:
-Allow users to ask direct decision questions.
+Make market data stable, resilient, and reliable.
 
 Requirements:
-- support prompts like:
-  - Should I enter this market?
-  - Should I build this product?
-  - Should I pursue this opportunity?
-- responses must be concise, structured, and strategic
-- preserve premium report style
-- focus on business usefulness
+- fallback to last known good data
+- avoid UI breaking on partial data
+- improve refresh stability
+- ensure consistent prediction output
 
 Definition of Done:
-Users can generate decision-focused strategic analysis, not just opportunity summaries.
+Market panel remains stable even during API issues.
 
 ---
 
 ## Task 7
-Title: Assistant Mode
-Owner: Product Agent + Engineer Agent
-Status: Pending
-
-Goal:
-Expand Orvanthis from a report tool into a personal strategic assistant.
-
-Requirements:
-- support more direct user guidance
-- help interpret opportunities and risks
-- fit the executive dashboard style
-- feel distinct from generic chatbots
-
-Definition of Done:
-Orvanthis starts behaving like a strategic assistant, not just a report generator.
-
----
-
-## Task 8
-Title: Agent Task Runner Panel
-Owner: Product Agent + Engineer Agent
-Status: Pending
-
-Goal:
-Create a panel in the platform showing current AI work structure.
-
-Requirements:
-- show current task
-- show owner
-- show status
-- show next task
-- match premium executive UI
-
-Definition of Done:
-The dashboard includes a visible task runner panel for AI workflow visibility.
-
----
-
-## Task 9
 Title: Authentication System
 Owner: Engineer Agent
-Status: Later
+Status: Pending
 
 Goal:
 Add user accounts.
@@ -192,14 +144,14 @@ Requirements:
 - store reports per user
 
 Definition of Done:
-Users must log in to access their own dashboard and saved data.
+Users must log in to access dashboard.
 
 ---
 
-## Task 10
+## Task 8
 Title: Stripe Billing
 Owner: Product Agent + Engineer Agent
-Status: Later
+Status: Pending
 
 Goal:
 Monetize Orvanthis.
@@ -208,7 +160,6 @@ Requirements:
 - free plan
 - pro plan
 - paywall for advanced reports
-- preserve premium experience
 
 Definition of Done:
 Users can upgrade to Pro.
@@ -218,15 +169,59 @@ Users can upgrade to Pro.
 # BACKLOG
 
 Future features to build after MVP:
-- Watchlist intelligence scoring
-- Opportunity alerts
-- AI market scanners
-- Startup discovery engine
-- VC deal tracker
-- Industry trend detection
-- Competitive intelligence
-- Regulatory intelligence
-- Opportunity graph engine
-- Enterprise team workspaces
 
+## Intelligence Layer
+- AI market scanners
+- industry trend detection
+- startup discovery engine
+- VC deal tracker
+
+## User Features
+- watchlists v2 (grouped + weighted)
+- opportunity alerts (push + email)
+- saved strategy playbooks
+- export reports (PDF)
+
+## AI System Expansion
+- multi-agent system (Engineer, Product, Analyst)
+- autonomous research agent
+- continuous opportunity monitoring
+- competitive intelligence tracking
+
+## Platform Growth
+- mobile optimization
+- performance optimization
+- caching layer
+- analytics dashboard
+
+---
+
+# AGENT RULES
+
+All AI agents working on Orvanthis must:
+
+- follow one task at a time
+- never break existing functionality
+- preserve premium UI quality
+- avoid unnecessary dependencies
+- explain all changes clearly
+- wait for approval on major changes
+
+---
+
+# CURRENT PRIORITY ORDER
+
+1. Dashboard Polish Pass
+2. Market Data Reliability
+3. Opportunity Feed Completion
+4. Saved Reports Improvements
+5. Authentication System
+
+---
+
+# NOTES
+
+- Always prioritize product quality over speed
+- UI/UX should feel premium (Bloomberg / Apple-level polish)
+- Every feature must feel useful, not just functional
 
