@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id        String     @id @default(cuid())
+  email     String     @unique
+  password  String
+  name      String?
+  plan      String     @default("free")
+  createdAt DateTime   @default(now())
+
+  usages     Usage[]
+  agentRuns  AgentRun[]
+}
+
+model Usage {
+  id               String   @id @default(cuid())
+  userId           String
+  month            String
+  assistantCalls   Int      @default(0)
+  reportsGenerated Int      @default(0)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, month])
+}
+
+model AgentRun {
+  id        String   @id @default(cuid())
+  userId    String
+  agent     String
+  title     String
+  prompt    String
+  route     String
+  output    String?
+  notes     String?
+  favorite  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+}
